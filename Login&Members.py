@@ -3,7 +3,6 @@ from PyQt6.QtCore import Qt # type: ignore
 import sys
 
 
-# 🔐 LOGIN UI
 class LoginUI(PyQt6.QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -32,7 +31,6 @@ class LoginUI(PyQt6.QtWidgets.QWidget):
         self.setLayout(layout)
 
 
-# 👥 MEMBER MANAGEMENT UI
 class MemberUI(PyQt6.QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -75,7 +73,6 @@ class MemberUI(PyQt6.QtWidgets.QWidget):
         self.setLayout(layout)
 
 
-# 🧩 MAIN APP (to test both UI)
 class MainApp(PyQt6.QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -96,7 +93,6 @@ class MainApp(PyQt6.QtWidgets.QWidget):
         self.setLayout(layout)
 
 
-# 🚀 RUN APP
 if __name__ == "__main__":
     app = PyQt6.QtWidgets.QApplication(sys.argv)
     window = MainApp()
