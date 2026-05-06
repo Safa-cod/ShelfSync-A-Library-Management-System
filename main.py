@@ -7,7 +7,7 @@ import sys
 
 
 class ReportsUI(QWidget):
-    def init(self):
+    def_init_(self):
         super().init()
         self.setWindowTitle("Reports - ShelfSync")
         self.resize(600, 400)
@@ -37,7 +37,7 @@ class ReportsUI(QWidget):
 
 
 #  Run App
-if name == "main":
+if_name_ == "_main_":
     app = QApplication(sys.argv)
     window = ReportsUI()
     window.show()
