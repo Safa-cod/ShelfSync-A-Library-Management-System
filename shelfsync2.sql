@@ -6,7 +6,6 @@ CREATE TABLE Members (
     phone VARCHAR(20)
 );
 --  BOOKS TABLE
--- (Required for issue/return)
 CREATE TABLE Books (
     book_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(150) NOT NULL,
