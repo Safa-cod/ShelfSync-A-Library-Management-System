@@ -1,17 +1,6 @@
--- =========================================
--- ShelfSync - Library Management System
--- SQL Database File
--- =========================================
 
--- Create Database
 CREATE DATABASE IF NOT EXISTS shelfsync;
-
--- Use Database
 USE shelfsync;
-
--- =========================================
--- TABLE: books
--- =========================================
 
 CREATE TABLE IF NOT EXISTS books (
 
@@ -30,7 +19,3 @@ CREATE TABLE IF NOT EXISTS books (
     available_qty INT NOT NULL
 
 );
-
--- =========================================
--- END OF FILE
--- =========================================
