@@ -1,18 +1,12 @@
--- =========================
--- 🔹 MEMBERS TABLE
--- (Required for transactions)
--- =========================
+--  MEMBERS TABLE
 CREATE TABLE Members (
     member_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
     phone VARCHAR(20)
 );
-
--- =========================
--- 🔹 BOOKS TABLE
+--  BOOKS TABLE
 -- (Required for issue/return)
--- =========================
 CREATE TABLE Books (
     book_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(150) NOT NULL,
@@ -22,11 +16,7 @@ CREATE TABLE Books (
     total_qty INT NOT NULL,
     available_qty INT NOT NULL
 );
-
--- =========================
--- 🔹 TRANSACTIONS TABLE
--- (SAFAYET MAIN PART)
--- =========================
+-- TRANSACTIONS TABLE
 CREATE TABLE Transactions (
     transaction_id INT PRIMARY KEY AUTO_INCREMENT,
     member_id INT NOT NULL,
@@ -37,8 +27,7 @@ CREATE TABLE Transactions (
     return_date DATETIME NULL,
 
     status VARCHAR(20) DEFAULT 'Issued',
-
-    -- Relationships
+-- Relationships
     FOREIGN KEY (member_id) REFERENCES Members(member_id)
         ON DELETE CASCADE,
 
