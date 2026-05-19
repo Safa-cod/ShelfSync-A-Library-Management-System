@@ -1,8 +1,3 @@
--- ============================================================
---  LibraryOS – MySQL Database Schema
---  Import this file via phpMyAdmin or the MySQL CLI
--- ============================================================
-
 -- 1. Create & select the database
 CREATE DATABASE IF NOT EXISTS library_db
     CHARACTER SET utf8mb4
@@ -10,9 +5,6 @@ CREATE DATABASE IF NOT EXISTS library_db
 
 USE library_db;
 
--- ============================================================
---  TABLE: users  (staff / admin accounts)
--- ============================================================
 CREATE TABLE IF NOT EXISTS users (
     id          INT          NOT NULL AUTO_INCREMENT,
     username    VARCHAR(80)  NOT NULL UNIQUE,
@@ -23,7 +15,7 @@ CREATE TABLE IF NOT EXISTS users (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
--- Default admin account  (password = admin123)
+-- admin account 
 INSERT INTO users (username, password, full_name, role)
 SELECT 'admin',
        '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9',
@@ -32,9 +24,7 @@ SELECT 'admin',
 WHERE NOT EXISTS (SELECT 1 FROM users WHERE username = 'admin');
 
 
--- ============================================================
 --  TABLE: members  (library card holders)
--- ============================================================
 CREATE TABLE IF NOT EXISTS members (
     id              INT          NOT NULL AUTO_INCREMENT,
     member_id       VARCHAR(20)  NOT NULL UNIQUE,   -- e.g. LIB-00001
@@ -54,9 +44,7 @@ CREATE TABLE IF NOT EXISTS members (
 ) ENGINE=InnoDB;
 
 
--- ============================================================
 --  TABLE: books  (future extension)
--- ============================================================
 CREATE TABLE IF NOT EXISTS books (
     id          INT          NOT NULL AUTO_INCREMENT,
     isbn        VARCHAR(20)  UNIQUE,
